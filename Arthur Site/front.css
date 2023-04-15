@@ -1,0 +1,309 @@
+/*Pour la mise en page*/
+          .frontPage{
+            font-family: Caveat;
+          }
+
+          .headPage{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          height: 100%;
+          }
+/*Pour le nom de la marque + button*/
+        .titleDiv{
+          position: fixed;
+          top: 0px;
+          width: 100vw;
+          font-family: Caveat;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: movetitle 4s  alternate infinite;
+          animation-timing-function: linear;
+          
+          font-size: 10em;
+        
+        }
+
+        .Sunny{
+          
+          padding-right:10px ;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          background-image: linear-gradient(to right, black 20%, white);
+          
+        }
+
+        @keyframes movetitle {
+          from{
+            
+            transform: translateY(0px);
+          }
+
+          to{
+            
+            transform: translateY(10px);
+          }
+        }
+
+        .titleDivDisappear{
+          animation: disappear 1s ease-in-out;
+          animation-fill-mode: forwards;
+        }
+
+        @keyframes disappear {
+          from{
+            transform: translateX(0px);
+            opacity: 1;
+          }
+
+          to{
+            transform: translateX(-50px);
+            opacity: 0;
+          }
+        }
+
+        .buttonDiv{
+          font-family: Caveat;
+          font-size: 0.15em;
+          position: absolute;
+          bottom: 35% ;
+
+          padding: 10px 14px 10px 14px;
+          background-color: transparent;
+          border-radius:10px;
+          border: solid 2px palevioletred;
+          transform: scale(0.9);
+          color: white;
+          background-color: pink;
+          transition: all 0.5s;
+          }
+
+        .buttonDiv:hover{
+          transform: scale(1.2);
+          cursor: pointer;
+          border-radius: 50px 50px;
+          color: pink;
+          background-color: whitesmoke;
+          padding: 10px 100px 10px 100px;
+        }
+
+/*Pour le top*/
+
+
+          .top-left{
+            position: absolute;
+            border: 1px solid;
+            padding: 0px 14vw 10vh 0px;
+            top:-20%;
+          }
+
+          .top-right{
+            position:absolute;
+            top:-20%;
+            right: 0px;
+            display: flex;
+            margin: 0;
+            border: solid 2px pink;
+            padding: 0px 20px 10px 10px;
+            
+          }
+
+
+          .top-pop{
+            top: -20%;
+            animation: popTop 0.5s ease-in-out;
+            animation-fill-mode: forwards;
+            
+          }
+
+          .bot-pop{
+            bottom: -20%;
+            animation: popBottom 0.5s ease-in-out;
+            animation-fill-mode: forwards;
+            
+          }
+
+
+
+          @keyframes popTop {
+            from{
+              opacity: 0;
+              top: -20%;
+            }
+
+            to{
+              opacity: 1;
+              top:0%
+            }
+          }
+
+
+          .top-rightDiv{
+            border-right: solid 2px pink;
+            font-size: 1.1em;
+            margin: 1%;
+            padding: 10px;
+            padding-top:15px;
+            padding-right: 20px;
+            transition: all 0.5s
+          }
+
+          .top-rightDiv:hover{
+            
+            cursor: pointer;
+            color: rgb(201, 193, 193);
+            margin-left: 10px;
+            transform: scale(1.2);
+          }
+
+/*Pour le mid*/
+
+          .mid{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+          }
+          
+          .cloudPage{
+            
+            
+            width: 0px;
+            opacity: 0;
+            animation: up-down 2s ease-in-out alternate infinite;
+            transition: all 0.5s;
+          }
+
+          .cloudPink{
+            margin: 0;
+            width: 100%;
+            
+          }
+
+          
+          @keyframes up-down {
+            from{
+              transform: translateY(0px);
+            }
+
+            to{
+              transform: translateY(-50px);
+            }
+          }
+
+          .mid-pop{
+            width: 320px;
+            opacity: 1;
+          }
+
+          .mid-text{
+            transform: rotate(-5deg);
+            position: absolute;
+            top: 60px;
+            left: 110px;
+            font-size: 1.2em;
+            transition: all 0.5s;
+            margin-left: 1%;
+            
+          }
+
+          .mid-text:hover{
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+           font-size: 1.3em;
+          }
+
+          .descriptionText{
+            display: none;
+            opacity: 0;
+            position: fixed;
+            width: 50vw;
+            left: 25vw;
+            right: 25vw;
+            font-size: 150%;
+            text-align: center;
+            transition: opacity 1s;
+          }
+
+          .midtext-pop{
+            
+            opacity: 1;
+          }
+
+/*Pour le bot*/
+
+          .bot-left{
+          position: fixed;
+          bottom: -20%;
+
+          border: solid 2px pink;
+          width: 25vw;
+          height: 5vh;
+            
+          }
+
+          .bot-leftDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+          
+            
+            font-size:2em;
+            transition:all 0.5s
+          }
+
+          .bot-leftDiv:hover{
+            cursor: pointer;
+            letter-spacing: 4px;
+
+            background-color: pink;
+            color: white;
+          }
+          .bot-right{
+            position: fixed;
+            bottom: -20%;
+            right: 0px;
+            
+            margin: 0;
+            
+          
+          }
+
+          .bot-rightDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            margin: 1%;
+            width: 10vw;
+            height: 6vh;
+            transition: all 0.5s;
+            border: solid 2px pink;
+          }
+
+          .bot-rightDiv:hover{
+            
+            cursor: pointer;
+            background-color: pink;
+            color: rgb(201, 193, 193);
+            margin-left: 10px;
+            transform: scale(1.2);
+            border-top-left-radius: 30px;
+          }
+
+          @keyframes popBottom {
+            from{
+              opacity: 0;
+              bottom: -20%;
+            }
+
+            to{
+              opacity: 1;
+              bottom:0%
+            }
+          }

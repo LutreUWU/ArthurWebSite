@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+  <title>PROJET SITE VENTE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="general.css">
+  <link rel="stylesheet" href="front.css">
+</head>
+<body>
+  <div id="Bubblediv" >
+
+  </div>
+  <script>
+    bubblediv = document.getElementById("Bubblediv")
+
+    var bubble = [];
+
+    function generateBubble(){
+      for (var i = 0; i < 15; i++) {
+        var size = Math.random() * 70
+        
+        var left = Math.random() * window.innerWidth;
+
+        var duration = Math.random () * 12 + 5;
+
+        var bubbleImage = document.createElement("div");
+        bubbleImage.classList.add("bubble");
+      
+        bubbleImage.style.width = size + "px";
+        bubbleImage.style.height = size + "px";
+        bubbleImage.style.left = left + "px";
+        bubbleImage.style.animationDuration = duration + "s";
+
+        bubble.push(bubbleImage);
+
+        bubblediv.appendChild(bubbleImage)
+      }
+    }
+
+    generateBubble();
+
+
+  </script>
+
+
+
+
+  <div class="frontPage" id="frontDiv">
+    <div class="titleDiv" id="titleDiv">
+  
+      <span class="Sunny">Sunny</span> <span style="margin-left:5%"><span style="color:darkred">J</span>ap</span>
+     
+      <button class="buttonDiv" id="frontButton">Cliquez !</button>
+    
+      
+     </div>
+
+          <div class="headPage" id="topDiv">
+            <div class="top-left " id="topLeft">
+              Croquis #1
+            </div>
+
+            <div class="top-right" id="topRight">
+              <div class="top-rightDiv ">
+                Catalogue
+              </div>
+              <div class="top-rightDiv ">
+                Avis
+              </div>
+              <div class="top-rightDiv ">
+                Marque
+              </div>
+              <div class="top-rightDiv ">
+                Contact
+              </div>
+
+              
+            </div>
+          </div>
+
+          <div class="mid" >
+              
+            
+              <div class="cloudPage" id="midcloud">
+                <img class="cloudPink" src="cloudPink.png">
+                <p class="mid-text">Besoin d'aide ?</p>
+              </div>
+              
+            
+              <div class="descriptionText" id="midtext">
+                <h1>Qui sommes-nous ?</h1>
+                <h2>Lorem ipsum dolor sit amet. In nihil sunt et consequatur incidunt ut porro incidunt a repudiandae optio qui maiores dicta ut dolor nostrum rem earum sint? Sit impedit quibusdam ea inventore eaque rem obcaecati magnam est quam quaerat!
+
+                  Sit eius consequuntur cum quia itaque ut nulla corrupti rem galisum illo aut corrupti voluptas aut eius Quis qui unde vitae. Est esse reiciendis ad rerum ducimus vel consequatur fugiat et voluptates quis?
+                  
+                  Qui quaerat consequatur ex molestias enim eum suscipit dolorem ut odit architecto. Est eligendi pariatur ut voluptate dolorem et aperiam excepturi ut dolores adipisci.</h2>
+              </div>
+          </div>
+ 
+        <div class="downPage" id="DownDiv" >
+          <div class="bot-left" id="botLeft">
+            <div class="bot-leftDiv" >
+              <span style="text-align: center;">Inscription Gratuite</span>
+            </div>
+          </div>
+
+          <div class="bot-right" id="botRight">
+            
+            <div class="bot-rightDiv" >
+              Nouvelles Promo !
+            </div>
+            
+          </div>
+        </div>
+
+        <script>
+          frontDiv = document.getElementById("frontDiv")
+          titleDiv = document.getElementById("titleDiv")
+          
+          topLeftDiv = document.getElementById("topLeft")
+          topRightDiv = document.getElementById("topRight")
+      
+          midCloud = document.getElementById("midcloud")
+          midText = document.getElementById("midtext")
+
+          botLeftDiv = document.getElementById("botLeft")
+          botRightDiv = document.getElementById("botRight")
+
+          buttonClickOpen = document.getElementById("frontButton");
+          buttonClickOpen.addEventListener("click",function(){
+            titleDiv.classList.add("titleDivDisappear")
+            
+            setTimeout(() => {
+              
+              topLeftDiv.classList.add("top-pop");
+                frontDiv.removeChild(titleDiv)
+              }, 1200)
+              
+      
+            setTimeout(() => {
+              topRightDiv.classList.add("top-pop");
+            }, 1500);
+
+            setTimeout(() => {
+              botRightDiv.classList.add("bot-pop");
+            }, 1800);
+              
+      
+            setTimeout(() => {
+              botLeftDiv.classList.add("bot-pop");
+              midCloud.classList.add("mid-pop")
+              midText.style.display = ("block")
+              
+            }, 2100)
+
+            setTimeout(() => {
+              midText.classList.add("midtext-pop")
+            }, 3000);
+          })
+      
+        
+         </script>  
+  </div>
+</body>
